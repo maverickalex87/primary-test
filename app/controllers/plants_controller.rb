@@ -14,9 +14,9 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
     @garden = @plant.garden
     @plant.destroy
-    redirect_to garden_path(@garden)
+    redirect_to garden_path(@garden), status: :see_other
   end
-
+  
   private
 
   def plant_params
